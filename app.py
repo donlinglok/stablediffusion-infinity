@@ -184,7 +184,6 @@ class StableDiffusion:
             with autocast("cuda"):
                 images = inpaint(
                     prompt=prompt,
-                    negative_prompt=negative_prompt,
                     init_image=init_image.resize(
                         (process_size, process_size), resample=SAMPLING_MODE
                     ),

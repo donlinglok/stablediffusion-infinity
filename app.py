@@ -191,6 +191,7 @@ class StableDiffusion:
                     strength=strength,
                     num_inference_steps=step,
                     guidance_scale=guidance_scale,
+                    negative_prompt=negative_prompt,
                 )["sample"]
         else:
             with autocast("cuda"):

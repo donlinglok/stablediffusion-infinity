@@ -196,9 +196,9 @@ class StableDiffusion:
                 )["sample"]
         else:
             with autocast("cuda"):
-                # images = text2img(
-                #     prompt=prompt, negative_prompt=negative_prompt, height=process_size, width=process_size,
-                # )["sample"]
+                images = text2img(
+                    prompt="apple", negative_prompt=negative_prompt, height=process_size, width=process_size,
+                )["sample"]
         return images[0]
 
 

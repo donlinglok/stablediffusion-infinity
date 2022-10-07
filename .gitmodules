@@ -4,3 +4,6 @@
 [submodule "PyPatchMatch"]
 	path = PyPatchMatch
 	url = https://github.com/lkwq007/PyPatchMatch.git
+[submodule "diffusers"]
+	path = diffusers
+	url = https://github.com/huggingface/diffusers

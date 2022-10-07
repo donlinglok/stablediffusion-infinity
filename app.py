@@ -184,7 +184,7 @@ class StableDiffusion:
             with autocast("cuda"):
                 images = inpaint(
                     prompt=prompt,
-                    # negative_prompt=negative_prompt, ## only for diffusers version > 0.3.0
+                    negative_prompt=negative_prompt, ## only for diffusers version > 0.3.0
                     init_image=init_image.resize(
                         (process_size, process_size), resample=SAMPLING_MODE
                     ),
@@ -192,12 +192,11 @@ class StableDiffusion:
                     strength=strength,
                     num_inference_steps=step,
                     guidance_scale=guidance_scale,
-                    negative_prompt=negative_prompt,
                 )["sample"]
         else:
             with autocast("cuda"):
                 images = text2img(
-                    prompt="apple", negative_prompt=negative_prompt, height=process_size, width=process_size,
+                    prompt=prompt, negative_prompt=negative_prompt, height=process_size, width=process_size,
                 )["sample"]
         return images[0]
 
